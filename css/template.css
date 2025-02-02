@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden; 
+}
+
+
+.flex {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Левая часть */
+#right-area {
+    width: 60%; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#right-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+#right-area:hover img {
+    transform: scale(1.1);
+}
+
+/* Правая часть (форма) */
+#left-area {
+    width: 50%; 
+    height: 100vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    padding: 0;
+    background: #fff;
+}
+
+/* Контейнер для логотипа и заголовка */
+.header-container {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 250px; 
+    background-color: #3a3a3a;
+}
+
+/* Логотип */
+.logo {
+    width: 100px;
+    margin-left: 550px; 
+    background-color: #3a3a3a;
+    display: flex;
+    justify-content: center;
+     align-items: center;
+}
+.logo img {
+    width: 150%;
+    height: auto;
+}
+
+/* Заголовок */
+.al h1 {
+    text-align: left; 
+    font-size: 24px;
+
+    color: #ffffff; 
+    background-color: #3a3a3a;
+}
+
+/* Контейнер формы */
+.inner-form {
+    margin: 0;
+    margin-right: 500px;
+    max-width: 400px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+
+.alertMsg, .successMsg {
+    font-size: inherit;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
+    right: 2%;
+    max-width: 400px;
+    border-radius: 10px;
+    z-index: 999;
+    height: auto;
+    display: none;
+    cursor: pointer;
+}
+
+.alertMsg {
+    color: red;
+    background-color: rgba(255, 228, 228, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5);
+}
+
+.successMsg {
+    color: green;
+    background-color: rgba(218, 249, 223, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(11, 205, 61, 0.5);
+}
+
+.alertMsg i, .successMsg i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+@keyframes showFromLeft {
+    0% { opacity: 0; margin-left: -100%; }
+    100% { opacity: 1; margin-left: 0; }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; 
+    }
+
+    #right-area {
+        width: 100%;
+        height: 40vh;
+    }
+
+    #left-area {
+        width: 100%;
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .inner-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
